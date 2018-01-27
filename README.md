@@ -1,6 +1,5 @@
 # DYMO Label Framework
-Deobfuscated DYMO Label Framework JavaScript Library:
+DYMO Label Framework JavaScript Library:
 http://developers.dymo.com/category/dymo-label-framework/
 
-+ No jslint warnings!
-+ Functions for comfortable work with the printer.
+DYMO Label Framework JavaScript Library with comfortable functions for work with the printer.
