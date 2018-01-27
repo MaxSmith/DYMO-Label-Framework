@@ -1,9 +1,14 @@
 {
-	"name": "DYMO-Label-Framework",
+	"name": "DYMO.JavaScript.Label.Framework",
 	"version": "0.0.1",
 	"description": "DYMO Label Framework JavaScript Library with comfortable functions for work with the printer.",
 	"private": false,
-	"author": "MaxSmith",
+	"author": "maxsmith",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/MaxSmith/DYMO-Label-Framework.git"
+	},
 	"engines": {
 		"node": ">=0.12.0"
 	},
