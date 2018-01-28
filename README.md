@@ -11,8 +11,8 @@ window.dymo_label.load_template( 'templates/my-label.xml', function( xml_templat
   var label = window.dymo.label.framework.openLabelXml( xml_template );
   
   label.setObjectText('txtMain', 'Hello World!');
-	label.setObjectText('txtStat', 7777);
-	label.setObjectText('Barcode', 2018);
+  label.setObjectText('txtStat', 7777);
+  label.setObjectText('Barcode', 2018);
 
   window.dymo_label.print( label, number_of_copies );
 
