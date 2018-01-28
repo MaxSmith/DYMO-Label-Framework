@@ -1,6 +1,6 @@
 window.dymo_label = {
 
-	template_xml: null,
+	templates: {},
 
 	check_framework: function(){
 
@@ -28,32 +28,35 @@ window.dymo_label = {
 			return [false,'DYMO Framework: web service is not present.'];
 		}
 
-		deferred.resolve();
-
 		return true;
 
 	},
 
 	load_template: function( url, success ){
+		
+		// if loaded
+		if( this.templates[url] ){
+			success(this.templates[url]);
+			return this.templates[url];
+		}
+
+		// if not loaded
+		var self = this;
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if ( this.readyState == 4 && this.status == 200 ) {
+				self.templates[url] = this.response;
 				success(this.response);
 			}
 		};
 		xhttp.open('GET', url, true);
 		xhttp.send();
+
 		return xhttp;
+		
 	},
 
-	get: function(){
-		if( this.template_xml ){
-			return dymo.label.framework.openLabelXml( this.template_xml );
-		}
-		return null;
-	},
-
-	print: function( label, num_of_copies ) {
+	print: function( label, number_of_copies ) {
 
 		if( !dymo ){
 			return null;
@@ -67,7 +70,7 @@ window.dymo_label = {
 		if( printer_name && label ){
 
 			var print_params = dymo.label.framework.createLabelWriterPrintParamsXml({
-				copies: num_of_copies
+				copies: number_of_copies
 			});
 
 			label.print( printer_name, print_params );

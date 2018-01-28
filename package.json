@@ -1,6 +1,6 @@
 {
 	"name": "DYMO.JavaScript.Label.Framework",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "DYMO Label Framework JavaScript Library with comfortable functions for work with the printer.",
 	"private": false,
 	"author": "maxsmith",
