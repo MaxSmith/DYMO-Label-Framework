@@ -2,4 +2,19 @@
 DYMO Label Framework JavaScript Library:
 http://developers.dymo.com/category/dymo-label-framework/
 
-DYMO Label Framework JavaScript Library with comfortable functions for work with the printer.
+## Example of use
+
+``` 
+window.dymo_label.load_template( 'templates/my-label.xml', function( xml_template ){
+  
+  var number_of_copies = 1;
+  var label = window.dymo.label.framework.openLabelXml( xml_template );
+  
+  label.setObjectText('txtMain', 'Hello World!');
+	label.setObjectText('txtStat', 7777);
+	label.setObjectText('Barcode', 2018);
+
+  window.dymo_label.print( label, number_of_copies );
+
+});
+``` 
